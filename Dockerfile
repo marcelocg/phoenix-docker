@@ -27,7 +27,8 @@ ENV PATH $PATH:/elixir/bin
 RUN git clone https://github.com/phoenixframework/phoenix.git \
  && cd phoenix && git checkout v0.11.0 \
  && mix local.hex --force && mix local.rebar --force \
- && mix do deps.get, compile
+ && mix do deps.get, compile \
+ && mix archive.install https://github.com/phoenixframework/phoenix/releases/download/v0.11.0/phoenix_new-0.11.0.ez --force
 
 # install Node.js and NPM in order to satisfy brunch.io dependencies
 # the snippet below is borrowed from the official nodejs Dockerfile

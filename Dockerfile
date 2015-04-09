@@ -20,12 +20,12 @@ RUN wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
 RUN apt-get install -y erlang erlang-ssl erlang-inets && rm erlang-solutions_1.0_all.deb
 
 # install elixir from source
-RUN git clone https://github.com/elixir-lang/elixir.git && cd elixir && make
+RUN git clone https://github.com/elixir-lang/elixir.git && cd elixir && git checkout v1.0.4 && make
 ENV PATH $PATH:/elixir/bin
 
 # install Phoenix from source with some previous requirements
 RUN git clone https://github.com/phoenixframework/phoenix.git \
- && cd phoenix && git checkout v0.10.0 \
+ && cd phoenix && git checkout v0.11.0 \
  && mix local.hex --force && mix local.rebar --force \
  && mix do deps.get, compile
 

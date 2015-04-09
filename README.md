@@ -1,6 +1,6 @@
 ## A Docker container for the Phoenix framework
 
-It features Phoenix 0.10.0 with Elixir compiled from master branch source code and Erlang 17.5
+It features all the latest versions of the Phoenix web framework, the Elixir language and the Erlang platform.
 
 ![Phoenix Logo](https://www.filepicker.io/api/file/9prSmznZTiaRRmI3t89E)
 

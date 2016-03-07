@@ -13,6 +13,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y curl wget git mak
 
 # For some reason, installing Elixir tries to remove this file
 # and if it doesn't exist, Elixir won't install. So, we create it.
+# Thanks Daniel Berkompas for this tip.
+# http://blog.danielberkompas.com
 RUN touch /etc/init.d/couchdb
 
 # download and install Erlang package

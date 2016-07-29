@@ -9,7 +9,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # update and install some software requirements
-RUN apt-get update && apt-get upgrade -y && apt-get install -y curl wget git make
+RUN apt-get update && apt-get upgrade -y && apt-get install -y curl wget git make sudo
 
 # For some reason, installing Elixir tries to remove this file
 # and if it doesn't exist, Elixir won't install. So, we create it.

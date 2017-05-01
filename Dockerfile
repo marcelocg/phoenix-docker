@@ -3,15 +3,13 @@ FROM ubuntu:latest
 MAINTAINER Marcelo Gonçalves <marcelocg@gmail.com>
 
 # Elixir requires UTF-8
-RUN locale-gen en_US.UTF-8
+RUN apt-get update && apt-get upgrade -y && apt-get install locales && locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # update and install software
-RUN apt-get update && apt-get upgrade -y \
-    # install system depedencies
-    && apt-get install -y curl wget git make sudo \
+RUN apt-get install -y curl wget git make sudo \ # install system depedencies
     # download and install Erlang apt repo package
     && wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
     && dpkg -i erlang-solutions_1.0_all.deb \
